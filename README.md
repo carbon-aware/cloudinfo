@@ -112,45 +112,6 @@ For non-Kubernetes environments or as a fallback, the package can detect cloud i
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📄 `LICENSE`
-
-Apache 2.0
-
----
-
-## 🧪 Test Scaffold (optional)
-
-Under `test/cloudinfo_test.go`:
-
-```go
-package test
-
-import (
-    "testing"
-    "github.com/carbon-aware/cloudinfo/pkg/cloudinfo"
-)
-
-func TestFallback(t *testing.T) {
-    fallback := &cloudinfo.CloudInfo{Provider: "gcp", Region: "us-central1"}
-    result, err := cloudinfo.DetectCloudInfo(nil, nil, cloudinfo.Options{
-        PreferNodeLabels: false,
-        PreferIMDS: false,
-        Fallback: fallback,
-    })
-    if err != nil || result.Provider != "gcp" {
-        t.Errorf("expected fallback provider, got %v", result)
-    }
-}
-
-
-```
-
 ## Testing
 
 The project uses Ginkgo and Gomega for testing. The tests are organized into separate files for different functionalities:
