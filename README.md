@@ -148,3 +148,25 @@ func TestFallback(t *testing.T) {
     }
 }
 
+
+```
+
+## Testing
+
+The project uses Ginkgo and Gomega for testing. The tests are organized into separate files for different functionalities:
+
+- `test/cloudinfo_test.go`: Tests the high-level behavior of the `DetectCloudInfo` function.
+- `test/node_label_test.go`: Tests the node label detection functionality.
+- `test/imds_test.go`: Tests the IMDS detection functionality.
+
+To run the tests, use the following command:
+
+```bash
+make test
+```
+
+This will execute all tests and report any failures.
+
+## 📄 `LICENSE`
+
+Apache 2.0
