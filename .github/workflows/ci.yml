@@ -49,4 +49,4 @@ jobs:
       run: go install github.com/mgechev/revive@latest
 
     - name: Revive
-      run: revive run
+      run: revive ./...
