@@ -1,0 +1,39 @@
+linters:
+  enable:
+    - gofmt
+    - golint
+    - govet
+    - errcheck
+    - staticcheck
+    - gosimple
+    - ineffassign
+    - unconvert
+    - gosec
+    - misspell
+    - unparam
+    - goconst
+    - gocyclo
+    - dupl
+    - gocritic
+    - godot
+    - goimports
+    - revive
+    - stylecheck
+    - whitespace
+
+run:
+  deadline: 5m
+  tests: true
+
+issues:
+  exclude-dirs:
+    - vendor
+    
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - gocyclo
+
+  max-issues-per-linter: 0
+  max-same-issues: 0 
